@@ -1,0 +1,78 @@
+# ==========================================
+# Mental Health Support Agent - Front-End .gitignore
+# ==========================================
+
+# Obsidian Vault (Local documentation & session logs)
+Plan-and-Docs/
+.obsidian/
+
+# AI Assistants & IDE Configurations
+.cursor/
+.claude/
+.agents/
+.vscode/
+.idea/
+.hermes/
+*.swp
+*.swo
+AGENTS.md
+AGENTS.MD
+CLAUDE.md
+CLAUDE.MD
+.hermes.md
+HERMES.md
+skills-lock.json
+
+# Dependencies
+node_modules/
+/.pnp
+.pnp.js
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnp.*
+
+# Next.js / Production Build Output
+.next/
+out/
+build/
+dist/
+
+# Debug logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment Variables & Secrets
+.env
+.env*.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.env
+
+# Testing & Coverage
+coverage/
+.nyc_output/
+
+# OS Generated Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Temporary Files
+*.pid
+*.seed
+*.pid.lock
+*.tsbuildinfo
+.temp/
+.tmp/
+.impeccable/

@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+:root {
+  --background: #e4ede8;
+  --foreground: #1c1917;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: "Times New Roman", Times, serif;
+  --font-mono: "Courier New", monospace;
+}
+
+@keyframes equilibra-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.equilibra-loading {
+  display: grid;
+  min-height: 100svh;
+  width: 100%;
+  place-items: center;
+  background: #e4ede8;
+  color: #173e37;
+  font-family: "Times New Roman", Times, serif;
+}
+.equilibra-loading-content {
+  padding: 2rem;
+  text-align: center;
+}
+.equilibra-loading-brand {
+  margin: 0 0 2rem;
+  font-size: clamp(3rem, 9vw, 4.5rem);
+  font-weight: 400;
+  letter-spacing: -0.025em;
+}
+.equilibra-loading-status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+.equilibra-loading-status p {
+  margin: 0;
+  font-size: 1.0625rem;
+}
+.equilibra-loading-spinner {
+  color: #24685d;
+  animation: equilibra-spin 1.2s linear infinite;
+  flex: none;
+}
+.equilibra-loading-content button {
+  min-height: 44px;
+  margin-top: 1.5rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid #96b7a9;
+  border-radius: 12px;
+  background: transparent;
+  color: #173e37;
+  font:
+    700 1rem "Times New Roman",
+    Times,
+    serif;
+  cursor: pointer;
+}
+.equilibra-loading-content button:hover {
+  background: #d5e4dc;
+}
+.equilibra-loading-content button:focus-visible {
+  outline: 3px solid #24685d;
+  outline-offset: 4px;
+}
+.landing-loading-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  overflow-y: auto;
+}
+@media (prefers-reduced-motion: reduce) {
+  .equilibra-loading-spinner {
+    animation: none;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "Times New Roman", Times, serif;
+}
