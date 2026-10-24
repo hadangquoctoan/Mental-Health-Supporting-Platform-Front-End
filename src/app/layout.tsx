@@ -4,6 +4,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Equilibra | Chăm sóc sức khỏe tinh thần",
+  robots: { index: false, follow: false },
   description:
     "Theo dõi cảm xúc và sàng lọc sức khỏe tâm thần cùng Equilibra. Kết quả sàng lọc không thay thế chẩn đoán y khoa.",
 };

@@ -43,10 +43,7 @@ export function TodayColumn() {
 
   return (
     <aside className="today-column" aria-labelledby="today-heading">
-      <div className="today-topline">
-        <span className="today-preview-label">Thử một phút lắng nghe mình</span>
-        <span className="today-demo-label">Minh họa</span>
-      </div>
+      <p className="today-demo-label">Bản thử ghi nhận cảm xúc</p>
       <h2 id="today-heading">Hôm nay bạn cảm thấy thế nào?</h2>
       <fieldset className="today-moods" aria-describedby={hintId}>
         <legend className="landing-sr-only">

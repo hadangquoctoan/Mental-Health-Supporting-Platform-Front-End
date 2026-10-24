@@ -11,7 +11,7 @@
   --coral: #b34f46;
   --coral-pale: #f2d8d3;
   --font-text: var(--font-landing-body), "Segoe UI", Arial, sans-serif;
-  --font-heading: var(--font-landing-display), Georgia, serif;
+  --font-heading: var(--font-text);
   --nav-surface: #f0f5f1;
   display: flow-root;
   background: var(--mist);
@@ -245,7 +245,7 @@ html.landing-smooth {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  padding: 0 1.25rem;
+  padding: 0.75rem 1.25rem;
   border: 1px solid transparent;
   border-radius: 12px;
   font-size: 1rem;
@@ -309,13 +309,13 @@ html.landing-smooth {
   padding-block: 1rem;
 }
 .landing-hero h1 {
-  max-width: 13ch;
+  max-width: 17ch;
   margin: 0;
   color: var(--ink);
-  font-size: clamp(3rem, 5vw, 4.5rem);
-  font-weight: 400;
-  letter-spacing: -0.025em;
-  line-height: 1.18;
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  line-height: 1.25;
   text-wrap: balance;
 }
 .landing-hero-copy {
@@ -334,16 +334,23 @@ html.landing-smooth {
 }
 .landing-hero-note {
   margin: 1.3rem 0 0;
+  color: var(--ink-soft);
+  font-size: 1rem;
+}
+.landing-hero-note a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
   color: var(--teal);
-  font-size: 0.8rem;
   font-weight: 600;
+  text-underline-offset: 4px;
 }
 .landing-hero-bottom {
   display: flex;
   align-items: center;
   gap: 0.7rem;
-  max-width: 18rem;
-  margin-top: 5.2rem;
+  max-width: 32rem;
+  margin-top: 2rem;
   color: var(--ink-soft);
 }
 .landing-hero-bottom svg {
@@ -352,7 +359,7 @@ html.landing-smooth {
 }
 .landing-hero-bottom p {
   margin: 0;
-  font-size: 0.82rem;
+  font-size: 1rem;
   line-height: 1.45;
 }
 .landing-hero-visual {
@@ -416,17 +423,14 @@ html.landing-smooth {
 }
 .today-preview-label {
   color: var(--teal);
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-weight: 700;
   letter-spacing: 0.04em;
 }
 .today-demo-label {
-  padding: 0.28rem 0.5rem;
-  border-radius: 5px;
-  background: var(--surface-strong);
-  color: var(--teal-deep);
-  font-size: 0.75rem;
-  font-weight: 600;
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.9375rem;
 }
 .today-column h2 {
   margin: 1rem 0 1.25rem;
@@ -493,23 +497,23 @@ html.landing-smooth {
   line-height: 1.55;
 }
 .today-bottomline {
+  flex-wrap: wrap;
   padding-top: 0.9rem;
   border-top: 1px solid var(--line);
 }
 .today-bottomline p {
   margin: 0;
   color: var(--ink-soft);
-  font-size: 0.82rem;
+  font-size: 1rem;
 }
 .today-bottomline a {
   display: inline-flex;
   align-items: center;
   gap: 0.15rem;
   color: var(--teal);
-  font-size: 0.85rem;
+  font-size: 1rem;
   font-weight: 700;
   text-decoration: none;
-  white-space: nowrap;
 }
 
 .landing-companion {
@@ -526,12 +530,12 @@ html.landing-smooth {
 .landing-start h2,
 .landing-faq h2,
 .landing-close h2 {
-  max-width: 12ch;
+  max-width: 22ch;
   margin: 0;
-  font-size: clamp(2.2rem, 4vw, 3.75rem);
-  letter-spacing: -0.02em;
-  font-weight: 400;
-  line-height: 1.25;
+  font-size: clamp(1.75rem, 2.7vw, 2.5rem);
+  letter-spacing: -0.025em;
+  font-weight: 600;
+  line-height: 1.35;
   text-wrap: balance;
 }
 .landing-lede {
@@ -594,7 +598,7 @@ html.landing-smooth {
 .screen-item {
   position: relative;
   min-height: 230px;
-  padding: 1.7rem;
+  padding: 1.7rem 1.7rem 3.5rem;
   background: var(--mist);
   text-decoration: none;
   transition: background-color 180ms ease;
@@ -615,7 +619,7 @@ html.landing-smooth {
 }
 .screen-code span:last-child {
   color: var(--ink-soft);
-  font-size: 0.84rem;
+  font-size: 1rem;
 }
 .screen-item h3 {
   max-width: 18ch;
@@ -628,7 +632,7 @@ html.landing-smooth {
   max-width: 30ch;
   margin: 0;
   color: var(--ink-soft);
-  font-size: 0.82rem;
+  font-size: 1rem;
   line-height: 1.55;
 }
 .screen-arrow {
@@ -640,7 +644,7 @@ html.landing-smooth {
 .screen-disclaimer {
   margin: 1.2rem 0 0;
   color: var(--ink-soft);
-  font-size: 0.85rem;
+  font-size: 1rem;
 }
 
 .landing-start {
@@ -695,7 +699,7 @@ html.landing-smooth {
 .start-steps p {
   margin: 0.45rem 0 0;
   color: #b8d1c7;
-  font-size: 0.83rem;
+  font-size: 1rem;
   line-height: 1.55;
 }
 
@@ -706,7 +710,7 @@ html.landing-smooth {
   padding: 7.4rem 0;
 }
 .faq-intro .landing-lede {
-  font-size: 0.92rem;
+  font-size: 1rem;
 }
 .faq-intro .landing-text-link {
   margin-top: 2rem;
@@ -724,7 +728,7 @@ html.landing-smooth {
   gap: 1rem;
   padding: 1.35rem 0;
   cursor: pointer;
-  font-size: 0.94rem;
+  font-size: 1rem;
   font-weight: 600;
   list-style: none;
 }
@@ -743,7 +747,7 @@ html.landing-smooth {
   max-width: 55ch;
   margin: -0.45rem 2rem 1.35rem 0;
   color: var(--ink-soft);
-  font-size: 0.86rem;
+  font-size: 1rem;
   line-height: 1.7;
 }
 
@@ -775,7 +779,7 @@ html.landing-smooth {
 }
 .sos-band .landing-btn {
   min-height: 2.65rem;
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
 
 .landing-close {
@@ -786,8 +790,8 @@ html.landing-smooth {
   padding-block: 6.6rem;
 }
 .landing-close h2 {
-  max-width: 11ch;
-  font-size: clamp(2.4rem, 4vw, 4rem);
+  max-width: 22ch;
+  font-size: clamp(1.75rem, 2.7vw, 2.5rem);
 }
 .landing-close p {
   margin: 0.85rem 0 0;
@@ -810,7 +814,7 @@ html.landing-smooth {
 .landing-footer-top p {
   margin: 0.8rem 0 0;
   color: #a4c1b5;
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
 .landing-footer-top nav {
   display: flex;
@@ -821,7 +825,7 @@ html.landing-smooth {
 }
 .landing-footer-top nav a {
   color: #d4e6de;
-  font-size: 0.8rem;
+  font-size: 1rem;
   text-decoration: none;
 }
 .landing-footer-top nav a:hover {
@@ -835,7 +839,7 @@ html.landing-smooth {
   padding-top: 1.15rem;
   border-top: 1px solid rgb(214 237 226 / 0.17);
   color: #87aa9b;
-  font-size: 0.82rem;
+  font-size: 1rem;
 }
 .landing-footer-bottom p {
   max-width: 65ch;
@@ -855,7 +859,9 @@ html.landing-smooth {
   transform: none;
 }
 @media (max-width: 900px) {
-  .landing-desktop-nav {
+  .landing-desktop-nav,
+  .landing-nav-login,
+  .landing-nav .landing-nav-register {
     display: none;
   }
   .landing-menu-toggle {
@@ -868,7 +874,7 @@ html.landing-smooth {
     padding-block: 4.5rem 5rem;
   }
   .landing-hero h1 {
-    max-width: 11ch;
+    max-width: 22ch;
   }
   .landing-hero-bottom {
     margin-top: 3rem;
@@ -922,7 +928,7 @@ html.landing-smooth {
     padding-block: 3.5rem 4.5rem;
   }
   .landing-hero h1 {
-    font-size: clamp(2.5rem, 11vw, 3.5rem);
+    font-size: clamp(2rem, 8vw, 2.75rem);
   }
   .landing-hero-copy {
     margin-top: 1.5rem;
@@ -955,8 +961,18 @@ html.landing-smooth {
   .today-column h2 {
     font-size: 1.25rem;
   }
+  .today-moods {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
   .today-mood {
-    font-size: 0.75rem;
+    font-size: 0.9375rem;
+  }
+  .today-column {
+    position: relative;
+    margin-top: -3rem;
+  }
+  .landing-hero-visual {
+    padding-bottom: 0;
   }
   .today-bottomline {
     align-items: flex-start;
@@ -979,7 +995,7 @@ html.landing-smooth {
   .landing-screen h2,
   .landing-start h2,
   .landing-faq h2 {
-    max-width: 13ch;
+    max-width: 22ch;
   }
   .screen-list {
     grid-template-columns: 1fr;

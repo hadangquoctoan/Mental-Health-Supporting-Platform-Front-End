@@ -5,7 +5,7 @@ import { Menu, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 const LINKS = [
-  { href: "#dong-hanh", label: "Cùng bạn mỗi ngày" },
+  { href: "#dong-hanh", label: "Cách sử dụng" },
   { href: "#sang-loc", label: "Sàng lọc" },
   { href: "#cau-hoi", label: "Câu hỏi thường gặp" },
 ];

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Be_Vietnam_Pro, Lora } from "next/font/google";
+import { Be_Vietnam_Pro } from "next/font/google";
 import { LandingLoading } from "@/components/features/landing/LandingLoading";
 import Link from "next/link";
 import {
@@ -22,69 +22,68 @@ const bodyFont = Be_Vietnam_Pro({
   variable: "--font-landing-body",
 });
 
-const displayFont = Lora({
-  subsets: ["latin", "vietnamese"],
-  display: "swap",
-  variable: "--font-landing-display",
-});
-
 const SCREENS = [
   {
     code: "PHQ-9",
     name: "Nhận biết dấu hiệu trầm cảm",
     count: "9 câu hỏi",
     description:
-      "Nhìn lại tâm trạng, giấc ngủ và những thay đổi trong sinh hoạt.",
+      "Nhìn lại tâm trạng, sự hứng thú, giấc ngủ và những thay đổi trong sinh hoạt trong 2 tuần qua.",
   },
   {
     code: "GAD-7",
     name: "Hiểu mức độ lo âu",
     count: "7 câu hỏi",
     description:
-      "Ghi nhận sự lo lắng và cảm giác bất an trong hai tuần gần đây.",
+      "Ghi nhận tần suất lo lắng, bất an và khó thư giãn trong 2 tuần qua.",
   },
   {
     code: "PSS-10",
-    name: "Lắng nghe sự căng thẳng",
+    name: "Đánh giá mức căng thẳng cảm nhận",
     count: "10 câu hỏi",
     description:
-      "Tìm hiểu cách bạn cảm nhận và đối diện với áp lực trong cuộc sống.",
+      "Nhìn lại cảm giác áp lực và khả năng kiểm soát những việc xảy ra trong tháng qua.",
   },
   {
     code: "AUDIT",
     name: "Nhìn lại việc sử dụng rượu bia",
     count: "10 câu hỏi",
     description:
-      "Nhận biết thói quen sử dụng rượu bia và ảnh hưởng đến sức khỏe.",
+      "Tìm hiểu mức sử dụng rượu bia và những ảnh hưởng có thể gặp đối với sức khỏe, sinh hoạt.",
   },
 ];
 
 const FAQS = [
   {
-    question: "Tôi có cần được chẩn đoán trước khi sử dụng không?",
+    question: "Tôi chưa từng đi khám, có thể sử dụng không?",
     answer:
-      "Bạn có thể bắt đầu bằng việc ghi nhận tâm trạng và mức căng thẳng, dù đã từng đi khám hay chưa. Nếu các cảm xúc khó chịu kéo dài hoặc ảnh hưởng đến sinh hoạt, hãy trao đổi với bác sĩ hoặc chuyên gia sức khỏe tâm thần.",
+      "Có. Bạn có thể ghi nhận tâm trạng dù đã từng đi khám hay chưa. Nếu đang điều trị, hãy tiếp tục làm theo hướng dẫn của bác sĩ; Equilibra là công cụ hỗ trợ theo dõi.",
   },
   {
     question: "Kết quả sàng lọc có phải là chẩn đoán không?",
     answer:
-      "Không. Các bài sàng lọc giúp bạn nhận biết những dấu hiệu cần chú ý. Chẩn đoán và hướng điều trị cần được bác sĩ đánh giá dựa trên tình trạng cụ thể của bạn.",
+      "Không. Điểm số giúp nhận biết dấu hiệu cần chú ý, không xác định bạn có bệnh hay không. Nếu triệu chứng kéo dài, nặng hơn hoặc ảnh hưởng đến sinh hoạt, hãy gặp bác sĩ, kể cả khi điểm sàng lọc thấp.",
   },
   {
     question: "Tôi bắt đầu theo dõi cảm xúc như thế nào?",
     answer:
-      "Tạo tài khoản, đăng nhập và mở mục Check-in. Bạn có thể chọn tâm trạng, mức căng thẳng và ghi thêm điều mình muốn chia sẻ. Những lần ghi nhận sẽ xuất hiện trong lịch sử để bạn xem lại.",
+      "Tạo tài khoản bệnh nhân, đăng nhập và mở mục Check-in. Chọn tâm trạng, mức căng thẳng và thêm ghi chú nếu muốn. Sau khi gửi thành công, bạn có thể xem lại trong lịch sử.",
   },
   {
     question: "Tôi có thể làm bài sàng lọc vào lúc khác không?",
     answer:
-      "Có. Câu trả lời đang làm được lưu nháp trên trình duyệt để bạn tiếp tục khi sẵn sàng. Hãy dùng cùng thiết bị và trình duyệt; tránh xóa dữ liệu duyệt web nếu muốn giữ bản nháp.",
+      "Có. Bài đang làm có thể lưu nháp trên trình duyệt để bạn tiếp tục. Hãy dùng cùng thiết bị, trình duyệt và tài khoản. Xóa dữ liệu duyệt web hoặc dùng chế độ riêng tư có thể làm mất bản nháp.",
+  },
+  {
+    question: "Khi nào tôi nên tìm hỗ trợ trực tiếp?",
+    answer:
+      "Nếu cảm xúc khó chịu kéo dài hoặc ảnh hưởng đến ngủ, ăn uống, công việc và các mối quan hệ, hãy sắp xếp gặp bác sĩ hoặc chuyên gia sức khỏe tâm thần. Khi có nguy hiểm tức thời hoặc ý định làm hại bản thân, gọi cấp cứu 115 hoặc đến cơ sở y tế gần nhất và nhờ người bạn tin tưởng ở bên. Đừng chờ kết quả sàng lọc.",
   },
 ];
 
 export function LandingPage() {
   return (
-    <div className={`landing-root ${bodyFont.variable} ${displayFont.variable}`}>
+    <div className={`landing-root ${bodyFont.variable}`}>
       <LandingLoading />
       <a className="landing-skip-link" href="#noi-dung">
         Đi đến nội dung chính
@@ -97,45 +96,42 @@ export function LandingPage() {
           aria-labelledby="hero-heading"
         >
           <div className="landing-hero-content">
-            <h1 id="hero-heading">Chăm sóc tinh thần, bắt đầu từ hôm nay.</h1>
+            <h1 id="hero-heading">Hiểu cảm xúc, chăm sóc sức khỏe tinh thần.</h1>
             <p className="landing-hero-copy">
-              Có những ngày, bạn chỉ cần một khoảng lặng để hiểu mình hơn. Ghi
-              lại cảm xúc, nhận biết những thay đổi và từng bước chăm sóc sức
-              khỏe tinh thần của bạn.
+              Equilibra giúp bạn ghi lại tâm trạng, theo dõi mức căng thẳng và
+              thực hiện các bài sàng lọc sức khỏe tâm thần. Có thêm thông tin
+              để hiểu mình và trao đổi với bác sĩ khi cần.
             </p>
             <div className="landing-hero-cta">
               <Link
                 href="/register"
                 className="landing-btn landing-btn-primary"
               >
-                Bắt đầu cùng Equilibra{" "}
+                Tạo tài khoản để bắt đầu{" "}
                 <ArrowUpRight size={19} aria-hidden="true" />
               </Link>
               <a href="#dong-hanh" className="landing-text-link">
-                Tìm hiểu thêm <ArrowRight size={18} aria-hidden="true" />
+                Xem cách sử dụng <ArrowRight size={18} aria-hidden="true" />
               </a>
             </div>
             <p className="landing-hero-note">
-              Theo nhịp của bạn. Từng ngày một.
+              Đã có tài khoản? <Link href="/login">Đăng nhập</Link>
             </p>
             <div className="landing-hero-bottom">
               <HeartHandshake size={22} strokeWidth={1.5} aria-hidden="true" />
-              <p>Chăm sóc tinh thần cũng là chăm sóc sức khỏe.</p>
+              <p>Sàng lọc không thay thế chẩn đoán hoặc điều trị của bác sĩ.</p>
             </div>
           </div>
           <div className="landing-hero-visual">
             <div className="landing-photo-wrap">
               <Image
                 src="/images/landing-forest.webp"
-                alt="Ánh nắng dịu xuyên qua những tán cây trong khu rừng xanh"
+                alt=""
                 fill
-                sizes="(max-width: 760px) 100vw, (max-width: 1200px) 48vw, 560px"
+                sizes="(max-width: 900px) 100vw, (max-width: 1200px) 48vw, 560px"
                 preload
                 className="landing-hero-photo"
               />
-              <p className="landing-photo-caption">
-                Cho mình một chút thời gian.
-              </p>
             </div>
             <TodayColumn />
           </div>
@@ -148,10 +144,11 @@ export function LandingPage() {
         >
           <div className="landing-shell companion-grid">
             <div className="companion-intro">
-              <h2 id="companion-heading">Hiểu mình hơn, từ những điều nhỏ.</h2>
+              <h2 id="companion-heading">Theo dõi cảm xúc mỗi ngày có thể bắt đầu đơn giản.</h2>
               <p className="landing-lede">
-                Không phải lúc nào bạn cũng dễ gọi tên điều mình đang cảm thấy.
-                Một vài phút nhìn lại mỗi ngày có thể là điểm bắt đầu.
+                Khi buồn bã, lo lắng hoặc căng thẳng, bạn có thể khó nhớ mình
+                đã cảm thấy thế nào trong những ngày trước. Việc ghi nhận giúp
+                bạn có điều cụ thể để nhìn lại.
               </p>
               <a href="#bat-dau" className="landing-text-link">
                 Xem cách bắt đầu <ArrowRight size={18} aria-hidden="true" />
@@ -161,20 +158,20 @@ export function LandingPage() {
               <article className="companion-feature">
                 <NotebookPen size={27} strokeWidth={1.5} aria-hidden="true" />
                 <div>
-                  <h3>Ghi lại điều bạn đang cảm thấy</h3>
+                  <h3>Ghi nhận tâm trạng và mức căng thẳng</h3>
                   <p>
-                    Chọn tâm trạng, mức căng thẳng và viết vài dòng cho những
-                    điều khó nói thành lời.
+                    Chọn cảm xúc phù hợp với hôm nay, đánh giá mức căng thẳng
+                    và thêm ghi chú nếu bạn muốn. Không cần viết dài.
                   </p>
                 </div>
               </article>
               <article className="companion-feature">
                 <History size={27} strokeWidth={1.5} aria-hidden="true" />
                 <div>
-                  <h3>Nhìn lại những ngày đã qua</h3>
+                  <h3>Xem lại lịch sử cảm xúc</h3>
                   <p>
-                    Xem lịch sử cảm xúc để nhận ra thay đổi và có thêm thông tin
-                    khi trao đổi với bác sĩ.
+                    Đọc lại những lần ghi nhận để theo dõi thay đổi theo thời
+                    gian. Bạn có thể dùng thông tin này khi trao đổi với bác sĩ.
                   </p>
                 </div>
               </article>
@@ -185,10 +182,10 @@ export function LandingPage() {
                   aria-hidden="true"
                 />
                 <div>
-                  <h3>Nhận biết khi bạn cần thêm hỗ trợ</h3>
+                  <h3>Tìm hiểu các dấu hiệu cần chú ý</h3>
                   <p>
-                    Các bài sàng lọc giúp bạn chú ý đến những dấu hiệu của trầm
-                    cảm, lo âu và căng thẳng.
+                    Các bộ câu hỏi về trầm cảm, lo âu, căng thẳng và sử dụng
+                    rượu bia giúp bạn có thêm thông tin về tình trạng của mình.
                   </p>
                 </div>
               </article>
@@ -203,13 +200,13 @@ export function LandingPage() {
         >
           <div className="screen-intro">
             <h2 id="screen-heading">
-              Một chút rõ ràng cho những cảm xúc khó gọi tên.
+              Sàng lọc sức khỏe tâm thần: hiểu kết quả, biết giới hạn.
             </h2>
             <div>
               <p className="landing-lede">
-                Bắt đầu với bài sàng lọc phù hợp với điều bạn đang quan tâm. Trả
-                lời theo cảm nhận của mình, trong không gian và thời gian bạn
-                thấy thoải mái.
+                Sàng lọc là trả lời một bộ câu hỏi để nhận biết dấu hiệu cần
+                chú ý. Chọn chủ đề bạn quan tâm và trả lời theo hướng dẫn của
+                từng bài; kết quả là thông tin tham khảo để trao đổi với bác sĩ.
               </p>
               <Link href="/login" className="landing-text-link">
                 Đăng nhập để sàng lọc{" "}
@@ -254,11 +251,11 @@ export function LandingPage() {
           <div className="landing-shell start-grid">
             <div>
               <h2 id="start-heading">
-                Bạn không cần biết hết mọi thứ để bắt đầu.
+                Bắt đầu theo dõi trong 3 bước.
               </h2>
               <p className="landing-lede">
-                Chỉ cần dành cho mình một chút thời gian. Equilibra giúp bạn ghi
-                nhận từng ngày, theo cách đơn giản và dễ theo dõi.
+                Bạn có thể bắt đầu bằng việc ghi nhận cảm xúc hôm nay.
+                Không cần làm tất cả bài sàng lọc trong một lần.
               </p>
               <Link href="/register" className="landing-btn landing-btn-light">
                 Tạo tài khoản <ArrowUpRight size={18} aria-hidden="true" />
@@ -270,10 +267,10 @@ export function LandingPage() {
                   1
                 </span>
                 <div>
-                  <h3>Tạo không gian của riêng bạn</h3>
+                  <h3>Tạo tài khoản bệnh nhân</h3>
                   <p>
-                    Đăng ký tài khoản và thêm thông tin người thân có thể liên
-                    hệ khi cần.
+                    Điền thông tin đăng ký và thêm người thân có thể liên hệ
+                    khi cần. Sau đó đăng nhập để sử dụng.
                   </p>
                 </div>
               </li>
@@ -282,10 +279,10 @@ export function LandingPage() {
                   2
                 </span>
                 <div>
-                  <h3>Dành một phút để nhìn lại</h3>
+                  <h3>Ghi nhận cảm xúc hôm nay</h3>
                   <p>
-                    Ghi nhận tâm trạng và mức căng thẳng hôm nay. Viết thêm nếu
-                    bạn muốn.
+                    Mở mục Check-in để chọn tâm trạng, mức căng thẳng và
+                    thêm ghi chú. Kiểm tra thông báo gửi thành công.
                   </p>
                 </div>
               </li>
@@ -294,10 +291,10 @@ export function LandingPage() {
                   3
                 </span>
                 <div>
-                  <h3>Tiếp tục khi bạn sẵn sàng</h3>
+                  <h3>Xem lại và tiếp tục theo dõi</h3>
                   <p>
-                    Xem lại lịch sử hoặc làm bài sàng lọc để hiểu thêm về điều
-                    mình đang trải qua.
+                    Mở lịch sử để xem những lần ghi nhận trước. Khi sẵn sàng,
+                    chọn bài sàng lọc phù hợp với điều bạn đang quan tâm.
                   </p>
                 </div>
               </li>
@@ -311,9 +308,9 @@ export function LandingPage() {
           aria-labelledby="faq-heading"
         >
           <div className="faq-intro">
-            <h2 id="faq-heading">Có thể bạn đang băn khoăn.</h2>
+            <h2 id="faq-heading">Câu hỏi thường gặp về Equilibra.</h2>
             <p className="landing-lede">
-              Một vài điều để bạn yên tâm trước khi bắt đầu.
+              Cách sử dụng, ý nghĩa kết quả và khi nào nên tìm hỗ trợ.
             </p>
             <Link href="/terms" className="landing-text-link">
               Đọc điều khoản sử dụng{" "}
@@ -340,8 +337,8 @@ export function LandingPage() {
           aria-labelledby="close-heading"
         >
           <div>
-            <h2 id="close-heading">Dành cho mình một khoảng lặng.</h2>
-            <p>Bắt đầu lắng nghe cảm xúc của bạn, hôm nay.</p>
+            <h2 id="close-heading">Bắt đầu từ cảm xúc hôm nay.</h2>
+            <p>Tạo tài khoản để ghi nhận tâm trạng và xem lại khi cần.</p>
           </div>
           <Link href="/register" className="landing-btn landing-btn-primary">
             Tạo tài khoản <ArrowUpRight size={19} aria-hidden="true" />
