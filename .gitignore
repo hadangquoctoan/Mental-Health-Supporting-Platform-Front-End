@@ -10,6 +10,7 @@ Plan-and-Docs/
 .cursor/
 .claude/
 .agents/
+.qoder/
 .vscode/
 .idea/
 .hermes/
