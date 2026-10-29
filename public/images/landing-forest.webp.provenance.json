@@ -1,8 +1,0 @@
-{
-  "type": "stock",
-  "source": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1400&q=85",
-  "provider": "Unsplash",
-  "retrieved": "2026-10-14",
-  "usage": "Decorative forest photograph for landing hero; no clinical or patient claim",
-  "processing": "Resize to width 1200 and encode WebP quality 82 with sharp"
-}
