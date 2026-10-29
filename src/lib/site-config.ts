@@ -1,7 +1,8 @@
 export const SITE_NAME = "Equilibra";
-export const LANDING_TITLE = "Equilibra | Theo dõi cảm xúc & sàng lọc sức khỏe tâm thần";
+export const LANDING_TITLE =
+  "Equilibra | Hiểu cảm xúc, chăm sóc tinh thần mỗi ngày";
 export const LANDING_DESCRIPTION =
-  "Ghi nhận tâm trạng, theo dõi căng thẳng và tìm hiểu các bài sàng lọc PHQ-9, GAD-7, PSS-10, AUDIT cùng Equilibra. Không thay thế chẩn đoán y khoa.";
+  "Ghi lại tâm trạng, nhìn lại cảm xúc và tìm hiểu sức khỏe tinh thần qua các bài sàng lọc cùng Equilibra. Không thay thế chẩn đoán y khoa.";
 
 export function getSiteUrl(): URL | null {
   const value = process.env.SITE_URL?.trim();
