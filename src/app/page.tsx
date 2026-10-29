@@ -12,10 +12,10 @@ import {
 const siteUrl = getSiteUrl();
 const socialImage = siteUrl
   ? {
-      url: new URL("/images/landing-forest.webp", siteUrl).href,
-      width: 1200,
-      height: 799,
-      alt: "Ánh nắng xuyên qua tán rừng xanh, hình ảnh của Equilibra",
+      url: new URL("/media/posters/landing/demo/vid-2.jpg", siteUrl).href,
+      width: 1920,
+      height: 1080,
+      alt: "Người chạy bộ trên bãi biển lúc hoàng hôn, hình ảnh của Equilibra",
     }
   : null;
 
