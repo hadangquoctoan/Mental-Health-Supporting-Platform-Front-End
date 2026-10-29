@@ -81,3 +81,12 @@ Thumbs.db
 .temp/
 .tmp/
 .impeccable/
+
+# Local source media (keep README/ATTRIBUTION)
+asset/*.mp4
+asset/**/*.mp4
+asset/*.mov
+asset/**/*.mov
+asset/*.webm
+asset/**/*.webm
+asset/**/originals/
