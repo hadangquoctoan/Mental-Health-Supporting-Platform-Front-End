@@ -12,17 +12,53 @@ const LINKS = [
 
 export function LandingNav() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const toggleRef = useRef<HTMLButtonElement>(null);
   const headerRef = useRef<HTMLElement>(null);
+  const panelRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const nav = headerRef.current;
+    if (!nav) return;
+    const hero = document.querySelector<HTMLElement>(".landing-hero");
+    let frame = 0;
+
+    const update = () => {
+      frame = 0;
+      const navBottom = nav.getBoundingClientRect().bottom;
+      const heroBottom = hero
+        ? hero.getBoundingClientRect().bottom
+        : window.scrollY > 32
+          ? 0
+          : Number.POSITIVE_INFINITY;
+      setScrolled(heroBottom <= navBottom);
+    };
+
+    function onScroll() {
+      if (frame) return;
+      frame = requestAnimationFrame(update);
+    }
+
+    update();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    return () => {
+      if (frame) cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
+  }, []);
 
   useEffect(() => {
     if (!open) return;
+
     function onKey(event: KeyboardEvent) {
       if (event.key === "Escape") {
         setOpen(false);
         toggleRef.current?.focus();
       }
     }
+
     function onOutside(event: PointerEvent) {
       if (
         event.target instanceof Node &&
@@ -31,6 +67,7 @@ export function LandingNav() {
         setOpen(false);
       }
     }
+
     document.addEventListener("keydown", onKey);
     document.addEventListener("pointerdown", onOutside);
     return () => {
@@ -39,8 +76,30 @@ export function LandingNav() {
     };
   }, [open]);
 
+  useEffect(() => {
+    const desktop = window.matchMedia("(min-width: 901px)");
+
+    function onDesktopChange() {
+      if (!desktop.matches) return;
+      if (panelRef.current?.contains(document.activeElement)) {
+        headerRef.current
+          ?.querySelector<HTMLElement>(
+            ".landing-desktop-nav a, .landing-nav-register, .landing-wordmark",
+          )
+          ?.focus();
+      }
+      setOpen(false);
+    }
+
+    desktop.addEventListener("change", onDesktopChange);
+    return () => desktop.removeEventListener("change", onDesktopChange);
+  }, []);
+
   return (
-    <header className="landing-nav" ref={headerRef}>
+    <header
+      className={scrolled ? "landing-nav is-scrolled" : "landing-nav"}
+      ref={headerRef}
+    >
       <div className="landing-nav-inner">
         <Link
           href="/"
@@ -74,7 +133,7 @@ export function LandingNav() {
             aria-expanded={open}
             aria-controls="landing-mobile-menu"
             aria-label={open ? "Đóng menu" : "Mở menu"}
-            onClick={() => setOpen(!open)}
+            onClick={() => setOpen((value) => !value)}
           >
             {open ? (
               <X size={22} aria-hidden="true" />
@@ -86,9 +145,14 @@ export function LandingNav() {
       </div>
       <nav
         id="landing-mobile-menu"
-        className="landing-mobile-nav"
+        ref={panelRef}
+        className={
+          open ? "landing-mobile-nav is-open" : "landing-mobile-nav"
+        }
         aria-label="Điều hướng trên điện thoại"
-        hidden={!open}
+        aria-hidden={!open}
+        inert={!open}
+        data-lenis-prevent
       >
         <div className="landing-mobile-links">
           {LINKS.map((link) => (
